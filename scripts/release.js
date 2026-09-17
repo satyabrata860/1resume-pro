@@ -2,8 +2,8 @@
 
 /**
  * Resume Builder - Automated Release Script
- * Author: Shiva Kar
- * Repository: https://github.com/shiva-kar/resume-builder
+ * Author: Satyabrata Pradhan
+ * Repository: https://github.com/satyabrata860/1resume-pro.git
  *
  * This script automates the entire release process:
  * 1. Version bumping (auto-increment PATCH by default)
@@ -252,7 +252,7 @@ function updateReadme(version) {
   if (!content.includes('![Version]')) {
     content = content.replace(
       /(!\[Live Demo\][^\n]+\n)/,
-      `$1[![Version](https://img.shields.io/badge/Version-${version}-blue?style=for-the-badge)](https://github.com/shiva-kar/resume-builder/releases)\n`
+      `$1[![Version](https://img.shields.io/badge/Version-${version}-blue?style=for-the-badge)](https://github.com/satyabrata860/1resume-pro.git)\n`
     );
   }
 
@@ -311,7 +311,7 @@ function createGitHubRelease(version, notes) {
 
   if (!checkGitHubCLI()) {
     logError('GitHub CLI (gh) not found. Please install it: https://cli.github.com/');
-    log('You can manually create a release at: https://github.com/shiva-kar/resume-builder/releases/new', 'yellow');
+    log('You can manually create a release at: https://github.com/satyabrata860/1resume-pro.git, 'yellow');
     return false;
   }
 
@@ -506,8 +506,8 @@ async function release(options = {}) {
   console.log('\n' + '='.repeat(60));
   log('  ✅ RELEASE COMPLETE!', 'green');
   log(`  Version: ${newVersion}`, 'bright');
-  log(`  Repository: https://github.com/shiva-kar/resume-builder`, 'cyan');
-  log(`  Release: https://github.com/shiva-kar/resume-builder/releases/tag/v${newVersion}`, 'cyan');
+  log(`  Repository: https://github.com/satyabrata860/1resume-pro.git`, 'cyan');
+  log(`  Release: https://github.com/satyabrata860/1resume-pro.git${newVersion}`, 'cyan');
   console.log('='.repeat(60) + '\n');
 }
 
