@@ -1466,14 +1466,14 @@ export default function ResumeBuilderPage() {
               <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
                 <div className="flex items-center gap-2">
                   <div className="w-6 h-6 bg-gradient-to-br from-primary/80 to-primary rounded flex items-center justify-center">
-                    <span className="monogram text-[10px] text-primary-foreground">SK</span>
+                    <span className="monogram text-[10px] text-primary-foreground">SP</span>
                   </div>
-                  <span>Built by <span className="text-foreground font-medium">Shiva Kar</span> · 2026</span>
+                  <span>Built by <span className="text-foreground font-medium">SATYABRATA PRADHAN</span> · 2026</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="italic text-muted-foreground/70">Your story, your style.</span>
                   <a
-                    href="https://github.com/shiva-kar/resume-builder"
+                    href="https://github.com/satyabrata860/1resume-pro.git"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-1.5 px-2 py-1 rounded-md hover:bg-muted/50 hover:text-foreground transition-all"
