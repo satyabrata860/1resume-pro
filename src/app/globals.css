@@ -1,0 +1,454 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* SHIVA KAR — Resume & Portfolio Builder
+   A handcrafted design system for professional resumes */
+
+@layer base {
+  :root {
+    /* Custom Brand Palette - Warm Slate with Accent */
+    --background: 210 20% 99%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    /* Signature Blue - Refined & Professional */
+    --primary: 224 76% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Soft Neutrals */
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 96%;
+    --accent-foreground: 222 47% 11%;
+
+    /* Status Colors */
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders & Inputs */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 224 76% 48%;
+
+    /* Design Tokens */
+    --radius: 0.375rem;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.03);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+    --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.08), 0 4px 6px -4px rgb(0 0 0 / 0.04);
+  }
+
+  .dark {
+    /* Dark Mode - Refined Slate */
+    --background: 224 71% 4%;
+    --foreground: 213 31% 91%;
+    --card: 224 71% 6%;
+    --card-foreground: 213 31% 91%;
+    --popover: 224 71% 6%;
+    --popover-foreground: 213 31% 91%;
+
+    /* Signature Blue - Dark Variant */
+    --primary: 217 91% 60%;
+    --primary-foreground: 222 47% 11%;
+
+    /* Dark Neutrals */
+    --secondary: 215 28% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 215 28% 17%;
+    --muted-foreground: 217 19% 62%;
+    --accent: 215 28% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    /* Status Colors */
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    /* Borders & Inputs */
+    --border: 215 28% 17%;
+    --input: 215 28% 17%;
+    --ring: 224 76% 48%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif !important;
+    letter-spacing: 0;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Inter', sans-serif;
+    line-height: 1.4;
+    font-feature-settings: "cv11", "ss01";
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Typography Scale */
+  h1, h2, h3, h4, h5, h6 {
+    @apply tracking-tight;
+  }
+}
+
+/* PREVIEW SURFACE STYLES */
+
+html {
+  font-size: 16px;
+}
+
+.resume-container {
+  display: block;
+  visibility: visible;
+  box-sizing: border-box;
+  white-space: normal;
+  word-break: normal;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+  overflow: hidden;
+  container-type: inline-size;
+  container-name: resume;
+}
+
+.preview-wrapper {
+  display: block;
+  visibility: visible;
+  overflow: visible;
+}
+
+.resume-container .section {
+  display: block;
+}
+
+.resume-container .section-block {
+  display: block;
+  margin-bottom: 12px;
+}
+
+.resume-container .section-block:last-child {
+  margin-bottom: 0;
+}
+
+.resume-container .main-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 68% 32%;
+  column-gap: 0;
+  row-gap: 0;
+  align-items: start;
+  justify-content: start;
+}
+
+@container resume (max-width: 650px) {
+  .resume-container .main-grid {
+    grid-template-columns: 1fr;
+    row-gap: 24px;
+  }
+}
+
+.resume-container .left-column {
+  width: 100%;
+}
+
+.resume-container .right-column {
+  width: 100%;
+}
+
+.resume-container .skills-card {
+  width: 100%;
+  padding: 16px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  left: 0;
+  top: 0;
+  transform: none;
+  gap: 0;
+  align-self: start;
+}
+
+.resume-container .contact-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 16px;
+  row-gap: 6px;
+}
+
+.resume-container .contact-column {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+
+.resume-container .contact-row-centered {
+  justify-content: center;
+  text-align: center;
+}
+
+.resume-container .contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 100%;
+}
+
+.resume-container .contact-item-no-icon {
+  /* No grid override needed for flex layout */
+}
+
+.resume-container .contact-icon {
+  width: 14px;
+  height: 14px;
+  min-width: 14px;
+  min-height: 14px;
+  flex-shrink: 0;
+}
+
+.resume-container .contact-value {
+  white-space: normal;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  line-height: 1.4;
+}
+
+.resume-container .contact-link {
+  display: inline;
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+.resume-container .skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+}
+
+.resume-container .skills-container-compact {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  width: 100%;
+}
+
+.resume-container .skill-chip {
+  display: inline-flex;
+  align-items: center;
+  padding: 5px 10px;
+  border-radius: 6px;
+  line-height: 1.4;
+  max-width: 100%;
+}
+
+.resume-container .skills-container-compact .skill-chip {
+  /* inherits from .skill-chip */
+}
+
+.resume-container .skills-container .skill-chip:last-child {
+  /* no special margin needed with flex gap */
+}
+
+.resume-container,
+.resume-container * {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}
+
+.resume-container * {
+  animation: none !important;
+  transition: none !important;
+}
+
+/* Custom Text Color Hierarchy */
+
+.resume-opacity-name {
+  opacity: var(--opacity-name, 1);
+}
+
+.resume-opacity-headers {
+  opacity: var(--opacity-headers, 1);
+}
+
+.resume-opacity-subheaders {
+  opacity: var(--opacity-subheaders, 0.6);
+}
+
+.resume-opacity-body {
+  opacity: var(--opacity-body, 1);
+}
+
+.resume-opacity-skills {
+  opacity: var(--opacity-skills, 1);
+}
+
+.resume-text-primary {
+  opacity: 1;
+}
+
+.resume-text-secondary {
+  opacity: var(--secondary-opacity, 0.6);
+}
+
+.resume-text-tertiary {
+  opacity: var(--tertiary-opacity, 0.4);
+}
+
+.resume-bg-muted {
+  background-color: color-mix(in srgb, currentColor 8%, transparent);
+}
+
+/* CUSTOM SCROLLBAR */
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply bg-border/60 rounded-full;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-muted-foreground/40;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: hsl(var(--border)) transparent;
+}
+
+/* GLASS EFFECT & CARD STYLES */
+
+.glass {
+  @apply bg-card/80 backdrop-blur-sm border border-border/50;
+  box-shadow: var(--shadow-sm);
+}
+
+.dark .glass {
+  @apply bg-card/90 backdrop-blur-sm border-border/30;
+}
+
+.bento-card {
+  @apply transition-all duration-200 ease-out;
+}
+
+.bento-card:hover {
+  box-shadow: var(--shadow-md);
+}
+
+/* BUTTON ANIMATIONS */
+
+.btn-press {
+  @apply transition-all duration-150 ease-out;
+}
+
+.btn-press:active {
+  @apply scale-[0.98] translate-y-[1px];
+}
+
+.btn-glow {
+  @apply relative overflow-hidden;
+}
+
+.btn-glow::after {
+  content: '';
+  @apply absolute inset-0 opacity-0 transition-opacity duration-300;
+  background: linear-gradient(135deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+}
+
+.btn-glow:hover::after {
+  @apply opacity-100;
+}
+
+/* FORM FOCUS STATES */
+
+.focus-ring {
+  @apply focus:outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary/40;
+  @apply transition-all duration-150;
+}
+
+/* PAGE ASPECT RATIOS */
+
+.a4-preview { aspect-ratio: 210 / 297; }
+.letter-preview { aspect-ratio: 8.5 / 11; }
+.legal-preview { aspect-ratio: 8.5 / 14; }
+
+/* SMOOTH TRANSITIONS */
+
+.fade-in {
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.slide-in {
+  animation: slideIn 0.25s ease-out;
+}
+
+@keyframes slideIn {
+  from { opacity: 0; transform: translateX(-8px); }
+  to { opacity: 1; transform: translateX(0); }
+}
+
+/* REDUCED MOTION - ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .fade-in,
+  .slide-in {
+    animation: none;
+    opacity: 1;
+    transform: none;
+  }
+
+  .btn-press:active {
+    transform: none;
+  }
+
+  .bento-card:hover {
+    box-shadow: var(--shadow-sm);
+  }
+}
+
+/* SELECTION STYLES */
+
+::selection {
+  @apply bg-primary/20 text-foreground;
+}
+
+/* BRAND MONOGRAM */
+
+.monogram {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+.custom-color-picker .react-colorful { width: 100%; height: 180px; }

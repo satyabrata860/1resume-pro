@@ -1,0 +1,122 @@
+'use client';
+
+import React from 'react';
+import { Trash2, Plus } from 'lucide-react';
+import { Section } from '@/lib/schema';
+import { useResumeStore } from '@/lib/store';
+import { FormInput, FormTextarea, FormCheckbox } from './FormInput';
+import { MonthPicker } from '@/components/ui/MonthPicker';
+
+interface EducationFormProps {
+  section: Section;
+}
+
+export const EducationForm: React.FC<EducationFormProps> = ({ section }) => {
+  const { addSectionItem, removeSectionItem, updateSectionItem } = useResumeStore();
+
+  return (
+    <div className="space-y-4">
+      {section.items.map((item) => (
+        <div
+          key={item.id}
+          className="border-l-2 border-emerald-500/30 pl-4 space-y-3 py-2"
+        >
+          <div className="flex justify-between items-start">
+            <div className="flex-1 space-y-3">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                <FormInput
+                  placeholder="e.g. B.S. Computer Science, MBA"
+                  value={item.degree || ''}
+                  onChange={(e) =>
+                    updateSectionItem(section.id, item.id, {
+                      degree: e.target.value,
+                    })
+                  }
+                />
+                <FormInput
+                  placeholder="e.g. MIT, Stanford University"
+                  value={item.institution || ''}
+                  onChange={(e) =>
+                    updateSectionItem(section.id, item.id, {
+                      institution: e.target.value,
+                    })
+                  }
+                />
+              </div>
+
+              {/* Location Field */}
+              <FormInput
+                placeholder="Location (optional)"
+                value={item.location || ''}
+                onChange={(e) =>
+                  updateSectionItem(section.id, item.id, {
+                    location: e.target.value,
+                  })
+                }
+              />
+
+              <div className="flex gap-3 items-end flex-wrap">
+                <div className="space-y-1">
+                  <label className="text-xs font-medium text-muted-foreground">Start Date</label>
+                  <MonthPicker
+                    value={item.startDate || ''}
+                    onChange={(val) => updateSectionItem(section.id, item.id, { startDate: val })}
+                  />
+                </div>
+                <div className="space-y-1">
+                  <label className="text-xs font-medium text-muted-foreground">End Date</label>
+                  <MonthPicker
+                    value={item.endDate || ''}
+                    onChange={(val) => updateSectionItem(section.id, item.id, { endDate: val })}
+                    disabled={item.current}
+                  />
+                </div>
+                <FormCheckbox
+                  label="Currently studying here"
+                  checked={item.current || false}
+                  onChange={(e) =>
+                    updateSectionItem(section.id, item.id, {
+                      current: e.target.checked,
+                      ...(e.target.checked ? { endDate: '' } : {})
+                    })
+                  }
+                />
+              </div>
+
+              <FormTextarea
+                placeholder="• GPA: 3.8/4.0
+• Dean's List, Cum Laude
+• Relevant coursework: Data Structures, Algorithms..."
+                value={item.description || ''}
+                onChange={(e) =>
+                  updateSectionItem(section.id, item.id, {
+                    description: e.target.value,
+                  })
+                }
+                rows={2}
+                showBulletHelper
+              />
+            </div>
+
+            <button
+              onClick={() => removeSectionItem(section.id, item.id)}
+              className="p-2 hover:bg-destructive/10 rounded-none transition-colors text-destructive ml-2"
+            >
+              <Trash2 className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+      ))}
+
+      <button
+        onClick={() => addSectionItem(section.id)}
+        className="w-full py-2 flex items-center justify-center gap-2 text-sm font-medium text-muted-foreground hover:text-foreground hover:bg-muted/50 rounded-md transition-colors border border-dashed border-border"
+      >
+        <Plus className="w-4 h-4" />
+        Add Education
+      </button>
+    </div>
+  );
+};
+
+export default EducationForm;
