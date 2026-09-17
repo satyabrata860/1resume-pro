@@ -1255,7 +1255,7 @@ export default function ResumeBuilderPage() {
             {/* Brand Logo */}
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 bg-gradient-to-br from-primary to-primary/80 rounded-lg flex items-center justify-center shadow-sm">
-                <span className="monogram text-lg text-primary-foreground">SK</span>
+                <span className="monogram text-lg text-primary-foreground">SP</span>
               </div>
               <div>
                 <h1 className="text-lg font-bold text-foreground tracking-tight">
@@ -1468,7 +1468,7 @@ export default function ResumeBuilderPage() {
                   <div className="w-6 h-6 bg-gradient-to-br from-primary/80 to-primary rounded flex items-center justify-center">
                     <span className="monogram text-[10px] text-primary-foreground">SP</span>
                   </div>
-                  <span>Built by <span className="text-foreground font-medium">SATYABRATA PRADHAN</span> · 2026</span>
+                  <span>Built by <span className="text-foreground font-medium">Satyabrata Pradhan</span> · 2026</span>
                 </div>
                 <div className="flex items-center gap-4">
                   <span className="italic text-muted-foreground/70">Your story, your style.</span>
