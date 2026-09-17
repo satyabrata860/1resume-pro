@@ -4,8 +4,6 @@
 Resume Builder is a comprehensive, web-based professional resume creation tool built using Next.js, React, Tailwind CSS, and Electron. It allows users to build, preview, and export high-quality resumes with real-time feedback. The application supports 10 unique professional templates, custom sections, drag-and-drop reordering, and fine-grained typography and opacity controls, ensuring users can craft a resume tailored perfectly to their industry. This project serves as my final project for CS50, demonstrating full-stack web development concepts, complex state management, and cross-platform desktop application packaging.
 
 [![Version](https://img.shields.io/badge/Version-0.6.1-blue?style=for-the-badge)](https://github.com/shiva-kar/resume-builder/releases)
-[![Status](https://img.shields.io/badge/Status-Beta-orange?style=for-the-badge)](https://github.com/shiva-kar/resume-builder/releases)
-[![Live Demo](https://img.shields.io/badge/Live%20Demo-shivakar.me-green?style=for-the-badge)](https://shivakar.me/resume-builder/)
 [![Next.js](https://img.shields.io/badge/Next.js-14-black?style=for-the-badge&logo=next.js)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?style=for-the-badge&logo=typescript)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind-3-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
@@ -18,9 +16,8 @@ Resume Builder is a comprehensive, web-based professional resume creation tool b
 
 | | |
 |---|---|
-| 🌐 **Live Demo** | [shivakar.me/resume-builder](https://shivakar.me/resume-builder/) |
-| 📥 **Downloads** | [Latest Release](https://github.com/shiva-kar/resume-builder/releases/latest) |
-| 💻 **Source Code** | [GitHub Repository](https://github.com/shiva-kar/resume-builder) |
+| 🌐 **Live Demo** | [satyabrata860/1resume-pro](https://1resume-pro.vercel.app/) | |
+| 💻 **Source Code** | [GitHub Repository} (https://github.com/satyabrata860/1resume-pro/) |
 | 📖 **Documentation** | [See Below](#usage) |
 
 ---
@@ -30,8 +27,6 @@ Resume Builder is a comprehensive, web-based professional resume creation tool b
 | Platform | Download | Description |
 |----------|----------|-------------|
 | 🌐 **Web App** | [Launch Online](https://shivakar.me/resume-builder/) | No installation required |
-| 🖥️ **Windows Installer** | [Resume-Builder-Beta-0.6.1-win.exe](https://github.com/shiva-kar/resume-builder/releases/latest/download/Resume-Builder-Beta-0.6.1-win.exe) | Full installation with uninstaller |
-| 🖥️ **Windows Portable** | [Resume-Builder-Beta-0.6.1-Portable.exe](https://github.com/shiva-kar/resume-builder/releases/latest/download/Resume-Builder-Beta-0.6.1-Portable.exe) | No installation, run anywhere |
 | 📦 **Source Code** | [Clone Repository](https://github.com/shiva-kar/resume-builder) | Build from source |
 
 ---
@@ -360,13 +355,6 @@ Copyright (c) 2025-2026 **Shiva Kar**
 
 ---
 
-## 👤 Author
-
-**Shiva Kar**
-
-- GitHub: [@shiva-kar](https://github.com/shiva-kar)
-- Repository: [resume-builder](https://github.com/shiva-kar/resume-builder)
-
 ---
 
 <p align="center">
@@ -374,5 +362,5 @@ Copyright (c) 2025-2026 **Shiva Kar**
 </p>
 
 <p align="center">
-  Made with ❤️ by <a href="https://github.com/shiva-kar">Shiva Kar</a>
+  Made with ❤️ by <a href="https://github.com/satyabrata860">Satyabrata Pradhan</a>
 </p>
