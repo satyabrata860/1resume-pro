@@ -296,7 +296,6 @@ See [CHANGELOG.md](CHANGELOG.md) for full version history.
 ---
 
 ## 🖼️ Screenshots
-<img width="1932" height="1221" alt="Screenshot 2026-01-10 014416" src="https://github.com/user-attachments/assets/01a5a361-7ff5-42e4-85b4-652de4283540" />
 <img width="989" height="1067" alt="Screenshot 2026-01-10 014921" src="https://github.com/user-attachments/assets/02015fd5-bec5-4ddb-8f3d-ef9123b6e081" />
 <img width="1490" height="733" alt="Screenshot 2026-01-10 014946" src="https://github.com/user-attachments/assets/048fae29-7e7f-4648-b035-a87545778353" />
 <img width="1034" height="623" alt="Screenshot 2026-01-10 014938" src="https://github.com/user-attachments/assets/4df718f7-0601-4e03-900f-f37f8b6d2961" />
@@ -351,7 +350,7 @@ We especially welcome contributions for:
 
 MIT License - see the [LICENSE](LICENSE) file for details.
 
-Copyright (c) 2025-2026 **Shiva Kar**
+Copyright (c) 2025-2026 **Satyabrata Pradhan**
 
 ---
 
